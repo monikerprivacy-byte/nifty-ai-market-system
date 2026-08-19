@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+*.credentials.json
+*dhan_credentials*
+*access_token*
+*secret_key*
+*.pem
+*.key
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data / artifacts
+*.duckdb
+*.db
+*.sqlite
+*.csv
+*.jsonl
+*.parquet
+data/
+logs/
+*.log
+output/
+outputs/
+cache/
+*.npy
+*.npz
+
+# Models (large)
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.bin
+*.gguf
+*.onnx
+*.joblib
+*.pkl
+*.model
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+*.plist
+*.json

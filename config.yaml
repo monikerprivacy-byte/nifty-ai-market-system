@@ -1,0 +1,97 @@
+alert:
+  enabled: true
+  min_interval_minutes: 60
+  sound: default
+app:
+  data_dir: /Volumes/Untitled/market_data
+  log_level: INFO
+  name: Nifty AI
+  temp_dir: /tmp/nifty_ai
+  version: 2.0.0
+backup:
+  compress: true
+  enabled: true
+  interval_hours: 24
+  max_backups: 7
+confidence:
+  max_conflicting_signals: 2
+  min_confirmation_signals: 3
+  rsi_overbought: 70
+  rsi_oversold: 30
+data_download:
+  interval_seconds: 1800
+  max_stocks: 50
+  start_date: '2020-01-01'
+databases:
+  market: /Volumes/Untitled/market_data/market.duckdb
+  memory: /Volumes/Untitled/market_data/memory.duckdb
+dhan_api:
+  access_token: YOUR_DHAN_ACCESS_TOKEN
+  client_id: YOUR_DHAN_CLIENT_ID
+  max_retries: 3
+  rate_limit: 5
+features:
+  atr_period: 14
+  bollinger_period: 20
+  bollinger_std: 2
+  ema_periods:
+  - 20
+  - 50
+  rsi_periods:
+  - 14
+  - 28
+  sma_periods:
+  - 20
+  - 50
+  - 200
+  volume_avg_period: 20
+llama_server:
+  host: 127.0.0.1
+  max_tokens: 4096
+  port: 8080
+  temperature: 0.3
+memory:
+  embedding_dim: 384
+  embedding_model: all-MiniLM-L6-v2
+  episodic_ttl_days: 90
+  search_top_k: 5
+monitoring:
+  alert_on_failure: true
+  health_check_interval: 60
+model:
+  primary: 9b-q6
+  pre_filter_confidence: 55
+  llm_only_for_review: true
+  skip_llm_on_weak_signals: true
+plugins:
+  auto_load: true
+  enabled:
+  - market
+  - memory
+  - browser
+  - news
+scheduler:
+  eod_time: '15:30'
+  market_hours_interval: 900
+  non_market_interval: 3600
+self_review:
+  lookback_days:
+  - 1
+  - 5
+  - 20
+  schedule_hour: 23
+  schedule_minute: 30
+trading:
+  max_concentration_pct: 30
+  max_daily_loss_pct: 2
+  max_position_pct: 10
+  mode: paper
+  paper_capital: 100000
+whatsapp:
+  enabled: false
+  phone: ''
+  apikey: ''
+  notify_on_trade: true
+  notify_on_signal: false
+  notify_on_error: true
+  daily_summary: true
